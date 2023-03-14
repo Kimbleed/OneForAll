@@ -5,19 +5,22 @@ if(is_Module.toBoolean()){
 }
 
 android {
-    compileSdk rootProject.ext.android.compileSdk
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
 
     defaultConfig {
         if(is_Module.toBoolean()){
             applicationId "com.example.login"
         }
 
-        minSdk rootProject.ext.android.minSdk
-        targetSdk rootProject.ext.android.targetSdk
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
         versionCode rootProject.ext.android.versionCode
         versionName rootProject.ext.android.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+
     }
 
     buildTypes {
@@ -50,7 +53,7 @@ dependencies {
 //    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation  rootProject.ext.androidxLibs
     implementation  rootProject.ext.commonLibs
-    implementation  rootProject.ext.annotationLibs
+//    implementation  rootProject.ext.annotationLibs
     implementation  rootProject.ext.retrofitLibs
     implementation  project(rootProject.ext.other)
 

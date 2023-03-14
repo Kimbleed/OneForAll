@@ -1,9 +1,17 @@
 ext{
+    compileSdkVersion = 31
+    buildToolsVersion= "30.0.2"
+    applicationId = "com.example.oneforall"
+    targetSdkVersion =  31
+    minSdkVersion = 26
+
+
     android=[
-            compileSdk: 31,
+            compileSdkVersion: 31,
+            buildToolsVersion: "30.0.2",
             applicationId:"com.example.oneforall",
-            targetSdk: 31,
-            minSdk:21,
+            targetSdkVersion: 31,
+            minSdkVersion:26,
             versionCode:1,
             versionName:"1.0"
     ]

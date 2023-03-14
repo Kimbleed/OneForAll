@@ -15,6 +15,11 @@ import android.widget.TextView;
 
 import com.example.login.LoginActivity;
 import com.example.oneforall.R;
+import com.example.oneforall.activity.rn_page.ui.Buz1Activity;
+import com.facebook.react.ReactApplication;
+import com.facebook.react.ReactInstanceManager;
+import com.facebook.react.ReactNativeHost;
+import com.facebook.react.bridge.ReactContext;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,17 +73,36 @@ public class MainActivity extends BaseActivity {
         //UI框架 Compose的尝试
         mList.add(new ActivityInfo("ComposeTest",ComposeTestActivity.class));
 
+        //Glide源码学习
+        mList.add(new ActivityInfo("Glide ",GlideDemoActivity.class));
+
+        //Kotlin UI框架Compose的体验
+        mList.add(new ActivityInfo("Kotlin Compose",ComposeTestActivity.class));
+
         //Service 的使用学习
         mList.add(new ActivityInfo("bindService",ServiceActivity.class));
 
         //AIDL 实操 预备
         mList.add(new ActivityInfo("AIDL",AidlActivity.class));
 
+        //ReactNative Activity :Buz1Activity 分包-业务包1
+        mList.add(new ActivityInfo("RN 分包-业务包1", Buz1Activity.class));
+
 
     }
 
     @Override
     void initData() {
+        ReactInstanceManager reactInstanceManager = ((ReactApplication)getApplication()).getReactNativeHost().getReactInstanceManager();
+        if (!reactInstanceManager.hasStartedCreatingInitialContext()) {
+            reactInstanceManager.createReactContextInBackground();
+            reactInstanceManager.addReactInstanceEventListener(new ReactInstanceManager.ReactInstanceEventListener() {
+                @Override
+                public void onReactContextInitialized(ReactContext context) {
+
+                }
+            });
+        }
 
     }
     private class MyRvAdapter extends RecyclerView.Adapter<RvHolder>{
