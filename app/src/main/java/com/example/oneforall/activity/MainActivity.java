@@ -38,16 +38,37 @@ public class MainActivity extends BaseActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(CTX,RecyclerView.VERTICAL,false);
         rv.setLayoutManager(layoutManager);
 
+        //研究Java的JDK动态代理/CGLIB动态代理 和 静态代理
         mList.add(new ActivityInfo("Proxy",ProxyActivity.class));
+
+        //研究Retrofit 框架源码
         mList.add(new ActivityInfo("Retrofit",RetrofitActivity.class));
+
+        //研究Okhttp 框架源码
         mList.add(new ActivityInfo("OKHttp",OkhttpActivity.class));
+
+        //研究Rxjava 框架源码
         mList.add(new ActivityInfo("RxJava",RxJavaActivity.class));
-        mList.add(new ActivityInfo("组件化测试",LoginActivity.class));
+
+        //研究如何实现组件化
+        mList.add(new ActivityInfo("组件化试验",LoginActivity.class));
+
+        //ActivityManagerService AMS 研究（但目前啥都没写，我也忘了初衷）
         mList.add(new ActivityInfo("ActivityManagerService",ActivityManagerServiceActivity.class));
+
+        //试验Kotlin的语法（布局仍是老方式，未使用UI框架 compose）
         mList.add(new ActivityInfo("Kotlin",KotlinActivity.class));
+
+        //线程&锁 的学习
         mList.add(new ActivityInfo("Thread Lock",ThreadActivity.class));
+
+        //PackageManager PMS 研究
         mList.add(new ActivityInfo("PackageManager",PackageManagerActivity.class));
+
+        //UI框架 Compose的尝试
         mList.add(new ActivityInfo("ComposeTest",ComposeTestActivity.class));
+
+        //Service 的使用学习
         mList.add(new ActivityInfo("bindService",ServiceActivity.class));
 
 
