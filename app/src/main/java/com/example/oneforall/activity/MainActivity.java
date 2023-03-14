@@ -71,6 +71,9 @@ public class MainActivity extends BaseActivity {
         //Service 的使用学习
         mList.add(new ActivityInfo("bindService",ServiceActivity.class));
 
+        //AIDL 实操 预备
+        mList.add(new ActivityInfo("AIDL",AidlActivity.class));
+
 
     }
 
