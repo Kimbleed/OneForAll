@@ -11,7 +11,7 @@ public class GlideDemoActivity extends BaseActivity{
     String imgUrl = "https://image.gcores.com/666c96b0-817e-4813-829f-3aeb1a373b5d.png?x-oss-process=image/quality,q_90/format,webp";
     @Override
     int getContentId() {
-        return R.layout.activity_default;
+        return R.layout.activity_img;
     }
 
     @Override

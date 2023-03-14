@@ -23,7 +23,7 @@ public class ProxyActivity extends BaseActivity{
     @Override
     void initData() {
 
-        Person person = new Man();
+        final Person person = new Man();
 
         Logger.getInstance().i(TAG,"----------静态代理");
         Person staticProxy = new ManProxy((Man)person);

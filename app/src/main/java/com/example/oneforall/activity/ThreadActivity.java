@@ -16,8 +16,8 @@ public class ThreadActivity extends BaseActivity{
 
     @Override
     void initData() {
-        SynchronizedTest t1 =new SynchronizedTest();
-        Thread thread1= new Thread(new Runnable() {
+        final SynchronizedTest t1 =new SynchronizedTest();
+        final Thread thread1= new Thread(new Runnable() {
             @Override
             public void run() {
                 t1.test("线程1");
@@ -25,7 +25,7 @@ public class ThreadActivity extends BaseActivity{
         });
         thread1.start();
 
-        SynchronizedTest t2=new SynchronizedTest();
+        final SynchronizedTest t2=new SynchronizedTest();
         Thread thread2 = new Thread(new Runnable() {
             @Override
             public void run() {

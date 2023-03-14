@@ -26,37 +26,37 @@ class ComposeTestActivity : ComponentActivity() {
             OneForAllTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    Greeting("Android")
+//                    Greeting("Android")
                 }
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String) {
-    Column(){
-        Column(){
-            Text(
-                text = "Hello $name!",
-                modifier= Modifier
-                    .background(Color.Red, RectangleShape)
-                    .padding(10.dp)
-            )
-            Text("Second Hello")
-        }
-        LazyColumn{
-            items(listOf("a","b","c")){
-                    name -> Text("Text${name}")
-            }
-        }
-    }
-}
+//@Composable
+//fun Greeting(name: String) {
+//    Column(){
+////        Column(){
+////            Text(
+////                text = "Hello $name!",
+////                modifier= Modifier
+////                    .background(Color.Red, RectangleShape)
+////                    .padding(10.dp)
+////            )
+////            Text("Second Hello")
+////        }
+////        LazyColumn{Modifier
+////            items(listOf("a","b","c")){
+////                    name -> Text("Text\${name}")
+////            }
+////        }
+//    }
+//}
 
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
     OneForAllTheme {
-        Greeting("Android")
+//        Greeting("Android")
     }
 }
