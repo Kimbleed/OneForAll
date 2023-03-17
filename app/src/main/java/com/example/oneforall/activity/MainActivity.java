@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.example.login.LoginActivity;
 import com.example.oneforall.R;
 import com.example.oneforall.activity.rn_page.ui.Buz1Activity;
+import com.example.oneforall.utils.Logger;
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
@@ -93,13 +94,14 @@ public class MainActivity extends BaseActivity {
 
     @Override
     void initData() {
+        // 提前加载基础包
         ReactInstanceManager reactInstanceManager = ((ReactApplication)getApplication()).getReactNativeHost().getReactInstanceManager();
         if (!reactInstanceManager.hasStartedCreatingInitialContext()) {
             reactInstanceManager.createReactContextInBackground();
             reactInstanceManager.addReactInstanceEventListener(new ReactInstanceManager.ReactInstanceEventListener() {
                 @Override
                 public void onReactContextInitialized(ReactContext context) {
-
+                    Logger.getInstance().i("onReactContextInitialized");
                 }
             });
         }

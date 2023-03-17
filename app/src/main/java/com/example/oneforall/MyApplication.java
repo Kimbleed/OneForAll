@@ -42,12 +42,21 @@ public class MyApplication  extends Application implements ReactApplication {
             );
         }
 
+        //热修复：加载在手机文件系统内的bundle包
+        @androidx.annotation.Nullable
+        @Override
+        protected String getJSBundleFile() {
+            return super.getJSBundleFile();
+        }
+
+        //上线：加载在app内的 asset资源文件夹的bundle包
         @Nullable
         @Override
         protected String getBundleAssetName() {
             return "platform.android.bundle";
         }
 
+        //Debug：加载Metro服务器的bundle包，getJSMainModuleName 提供了链接url的一部分(Debug)
         @Override
         protected String getJSMainModuleName() {
             return "MultiDenugEntry";
